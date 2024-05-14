@@ -15,12 +15,20 @@ public class OrganismePublic {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable = false)
     private String nom;
+    @Column(nullable = false)
     private String adresse;
+    @Column(length = 10,nullable = false)
     private String jourDebut;
+    @Column(length = 10,nullable = false)
     private String jourFin;
+    @Column(length = 5,nullable = false)
     private String deHeure1;
+    @Column(length = 5,nullable = false)
     private String aHeure1;
+    @Column(length = 5)
     private String deHeure2;
+    @Column(length = 5)
     private String aHeure2;
 }

@@ -16,7 +16,10 @@ public class Petition {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable = false)
     private String titre;
+    @Column(nullable = false)
     private String contenu;
+    @Column(nullable = false)
     private Date dateCreation;
 }

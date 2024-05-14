@@ -15,6 +15,8 @@ public class PieceJointe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable = false,unique = true)
     private String nom;
+    @Column(length = 8,nullable = false)
     private String type;
 }

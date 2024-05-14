@@ -15,9 +15,14 @@ public class Municipale {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable = false)
     private String region;
+    @Column(nullable = false,unique = true)
     private String municipale;
+    @Column(nullable = false,unique = true)
     private String adresse;
+    @Column(nullable = false,unique = true)
     private String tel;
+    @Column(nullable = false,unique = true)
     private String fax;
 }

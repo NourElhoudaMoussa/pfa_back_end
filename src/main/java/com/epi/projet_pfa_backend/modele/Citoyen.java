@@ -11,6 +11,8 @@ import java.util.Date;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+//methode table par classe
+@Table(name="Citoyen")
 public class Citoyen extends User{
     @Column(length = 50)
     private String occupation;

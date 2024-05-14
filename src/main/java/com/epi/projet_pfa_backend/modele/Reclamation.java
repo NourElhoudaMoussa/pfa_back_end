@@ -17,9 +17,13 @@ public class Reclamation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable = false)
     private String description;
+    @Column(nullable = false)
     private String adresse;
+    @Column(nullable = false)
     private Date dateCreation;
+    @Column(length = 20,nullable = false)
     private String etat;
 
 }
