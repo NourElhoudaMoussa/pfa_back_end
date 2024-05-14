@@ -14,4 +14,7 @@ import lombok.Setter;
 //methode table par classe
 @Table(name="ResponsableService")
 public class ResponsableService extends Responsable{
+    @OneToOne
+    @JoinColumn(referencedColumnName = "id")
+    private Service service;
 }

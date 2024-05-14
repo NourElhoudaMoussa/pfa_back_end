@@ -20,4 +20,6 @@ public class Evenement {
     private Date dateEvenement;
     @Column(length = 250,nullable = false)
     private String description;
+    @ManyToOne
+    private Municipale municipale;
 }

@@ -24,4 +24,10 @@ public class Intervention {
     private String contenu;
     @Column(nullable = false)
     private Date dateCreation;
+    @ManyToOne
+    private Citoyen citoyen;
+    @ManyToOne
+    private Service service;
+    @OneToOne
+    private Message message;
 }

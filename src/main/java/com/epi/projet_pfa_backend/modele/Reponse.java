@@ -17,4 +17,7 @@ public class Reponse {
     private Long id;
     @Column(nullable = false,unique = true)
     private String reponse;
+    @ManyToOne
+    @JoinColumn(referencedColumnName = "id",nullable = false)
+    private Question question;
 }

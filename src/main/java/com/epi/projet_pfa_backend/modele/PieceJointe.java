@@ -19,4 +19,8 @@ public class PieceJointe {
     private String nom;
     @Column(length = 8,nullable = false)
     private String type;
+    @ManyToOne
+    private Actualite actualite;
+    @ManyToOne
+    private Reclamation reclamation;
 }

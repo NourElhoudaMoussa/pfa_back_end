@@ -31,4 +31,6 @@ public class OrganismePublic {
     private String deHeure2;
     @Column(length = 5)
     private String aHeure2;
+    @ManyToOne
+    private Municipale municipale;
 }

@@ -29,5 +29,7 @@ public class Licence {
     private String delais;
     @Column(nullable = false)
     private String lieuxDeDepotDuDossier;
+    @ManyToOne
+    private Municipale municipale;
 
 }

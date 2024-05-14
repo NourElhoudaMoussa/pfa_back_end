@@ -17,5 +17,9 @@ public class Message {
     private Long id;
     @Column(nullable = false)
     private String reponse;
+    @OneToOne
+    private Intervention intervention;
+    @ManyToOne
+    private Responsable responsable;
 
 }

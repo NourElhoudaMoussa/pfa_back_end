@@ -14,4 +14,6 @@ import lombok.Setter;
 //methode table par classe
 @Table(name="ResponsableGenerale")
 public class ResponsableGenerale extends Responsable{
+    @OneToOne
+    private Municipale municipale;
 }
