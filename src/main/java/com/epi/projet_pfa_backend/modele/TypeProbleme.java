@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 @Entity
@@ -23,7 +22,7 @@ public class TypeProbleme {
     private String nomTypeProbleme;
     @ManyToOne
     @JoinColumn(referencedColumnName = "id",nullable = false)
-    private Service service;
+    private ServiceMunicipal service;
 
     @JsonIgnore
     @OneToMany(mappedBy = "typeProbleme", fetch =FetchType.EAGER)

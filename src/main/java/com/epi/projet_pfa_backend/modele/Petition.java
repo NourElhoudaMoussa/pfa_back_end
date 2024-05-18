@@ -26,7 +26,7 @@ public class Petition {
     @ManyToOne
     private Citoyen citoyen;
     @ManyToOne
-    private Service service;
+    private ServiceMunicipal service;
 
     @JsonIgnore
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)

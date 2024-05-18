@@ -1,4 +1,4 @@
-package com.epi.projet_pfa_backend.Service.implementation;
+package com.epi.projet_pfa_backend.service.implementation;
 
 import com.epi.projet_pfa_backend.Service.ReclamationService;
 import com.epi.projet_pfa_backend.modele.Reclamation;

@@ -28,7 +28,7 @@ public class Actualite {
     @Column(nullable = false)
     private Date dateCreation;
     @ManyToOne
-    private Service service;
+    private ServiceMunicipal service;
 
     @JsonIgnore
     @OneToMany(mappedBy = "actualite", fetch =FetchType.EAGER)

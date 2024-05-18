@@ -64,6 +64,6 @@ public class Municipale {
 
     @JsonIgnore
     @OneToMany(mappedBy = "municipale", fetch =FetchType.EAGER)
-    private List<Service> services=new ArrayList<>();
+    private List<ServiceMunicipal> services=new ArrayList<>();
 }
 

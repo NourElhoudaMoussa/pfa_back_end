@@ -16,5 +16,5 @@ import lombok.Setter;
 public class ResponsableService extends Responsable{
     @OneToOne
     @JoinColumn(referencedColumnName = "id")
-    private Service service;
+    private ServiceMunicipal service;
 }

@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import java.util.Collection;
+
 import java.util.Date;
 
 @Entity
@@ -27,7 +27,7 @@ public class Intervention {
     @ManyToOne
     private Citoyen citoyen;
     @ManyToOne
-    private Service service;
+    private ServiceMunicipal service;
     @OneToOne
     private Message message;
 }

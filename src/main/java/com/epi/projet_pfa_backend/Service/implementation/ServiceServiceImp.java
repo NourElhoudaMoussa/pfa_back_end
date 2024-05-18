@@ -1,33 +1,45 @@
-package com.epi.projet_pfa_backend.Service.implementation;
+package com.epi.projet_pfa_backend.service.implementation;
 
-import com.epi.projet_pfa_backend.Service.ServiceService;
-import com.epi.projet_pfa_backend.modele.Service;
+import com.epi.projet_pfa_backend.service.ServiceService;
+import com.epi.projet_pfa_backend.modele.ServiceMunicipal;
+import com.epi.projet_pfa_backend.repository.ServiceRepository;
+import lombok.*;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@AllArgsConstructor
+@Service
 public class ServiceServiceImp implements ServiceService {
+    private final ServiceRepository serviceRepository;
     @Override
-    public Service createService(Service service) {
-        return null;
+    public ServiceMunicipal createService(ServiceMunicipal service) {
+        return serviceRepository.save(service);
     }
 
     @Override
-    public List<Service> readService() {
-        return List.of();
+    public List<ServiceMunicipal> readService() {
+        return serviceRepository.findAll();
     }
 
     @Override
-    public Service updateService(Long id, Service service) {
-        return null;
+    public ServiceMunicipal updateService(Long id, ServiceMunicipal service) {
+        return serviceRepository.findById(id)
+                .map(s->{
+                    s.setNomService(service.getNomService());
+                    s.setMunicipale(service.getMunicipale());
+                    return serviceRepository.save(s);
+                }).orElseThrow(()->new RuntimeException("Service non trouvé!!"));
     }
 
     @Override
     public String DeleteService(Long id) {
-        return "";
+        serviceRepository.deleteById(id);
+        return "Service supprimé avec succées";
     }
 
     @Override
-    public Service getServiceById(Long id) {
-        return null;
+    public ServiceMunicipal getServiceById(Long id) {
+        return serviceRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Service non trouvé!!"));
     }
 }

@@ -1,14 +1,14 @@
-package com.epi.projet_pfa_backend.Service;
+package com.epi.projet_pfa_backend.service;
 
 
-import com.epi.projet_pfa_backend.modele.Service;
+import com.epi.projet_pfa_backend.modele.ServiceMunicipal;
 
 import java.util.List;
 
 public interface ServiceService {
-    Service createService(Service service);
-    List<Service> readService();
-    Service updateService(Long id,Service service);
+    ServiceMunicipal createService(ServiceMunicipal service);
+    List<ServiceMunicipal> readService();
+    ServiceMunicipal updateService(Long id, ServiceMunicipal service);
     String DeleteService(Long id);
-    Service getServiceById(Long id);
+    ServiceMunicipal getServiceById(Long id);
 }
