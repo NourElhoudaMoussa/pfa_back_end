@@ -38,7 +38,5 @@ public class ServiceMunicipal {
     @OneToMany(mappedBy = "service", fetch =FetchType.EAGER)
     private List<TypeProbleme> typeProblemes=new ArrayList<>();
 
-    @OneToOne
-    @JoinColumn(referencedColumnName = "id")
-    private ResponsableService responsableService;
+
 }
