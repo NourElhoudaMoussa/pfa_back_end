@@ -26,16 +26,16 @@ public class CitoyenServiceImp implements CitoyenService {
     public Citoyen updateCitoyen(Long id, Citoyen citoyen) {
         return citoyenRepository.findById(id)
                 .map(c->{
-                    c.setPrenom(citoyenRepository.getOne(id).getPrenom());
-                    c.setNom(citoyenRepository.getOne(id).getNom());
-                    c.setCin(citoyenRepository.getOne(id).getCin());
-                    c.setDN(citoyenRepository.getOne(id).getDN());
-                    c.setLN(citoyenRepository.getOne(id).getLN());
-                    c.setGenre(citoyenRepository.getOne(id).getGenre());
-                    c.setAdr(citoyenRepository.getOne(id).getAdr());
-                    c.setNumTel(citoyenRepository.getOne(id).getNumTel());
-                    c.setLogin(citoyenRepository.getOne(id).getLogin());
-                    c.setMdp(citoyenRepository.getOne(id).getMdp());
+                    c.setPrenom(citoyen.getPrenom());
+                    c.setNom(citoyen.getNom());
+                    c.setCin(citoyen.getCin());
+                    c.setDN(citoyen.getDN());
+                    c.setLN(citoyen.getLN());
+                    c.setGenre(citoyen.getGenre());
+                    c.setAdr(citoyen.getAdr());
+                    c.setNumTel(citoyen.getNumTel());
+                    c.setLogin(citoyen.getLogin());
+                    c.setMdp(citoyen.getMdp());
                     return citoyenRepository.save(c);
                 }).orElseThrow(()->new RuntimeException("Citoyen non trouvé!!"));
     }
