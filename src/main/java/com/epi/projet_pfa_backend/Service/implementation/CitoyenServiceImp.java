@@ -2,32 +2,53 @@ package com.epi.projet_pfa_backend.service.implementation;
 
 import com.epi.projet_pfa_backend.Service.CitoyenService;
 import com.epi.projet_pfa_backend.modele.Citoyen;
+import com.epi.projet_pfa_backend.repository.CitoyenRepository;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@AllArgsConstructor
+@Service
 public class CitoyenServiceImp implements CitoyenService {
+    private final CitoyenRepository citoyenRepository;
     @Override
     public Citoyen createCitoyen(Citoyen citoyen) {
-        return null;
+        return citoyenRepository.save(citoyen);
     }
 
     @Override
     public List<Citoyen> readCitoyen() {
-        return List.of();
+
+        return citoyenRepository.findAll();
     }
 
     @Override
     public Citoyen updateCitoyen(Long id, Citoyen citoyen) {
-        return null;
+        return citoyenRepository.findById(id)
+                .map(c->{
+                    c.setPrenom(citoyenRepository.getOne(id).getPrenom());
+                    c.setNom(citoyenRepository.getOne(id).getNom());
+                    c.setCin(citoyenRepository.getOne(id).getCin());
+                    c.setDN(citoyenRepository.getOne(id).getDN());
+                    c.setLN(citoyenRepository.getOne(id).getLN());
+                    c.setGenre(citoyenRepository.getOne(id).getGenre());
+                    c.setAdr(citoyenRepository.getOne(id).getAdr());
+                    c.setNumTel(citoyenRepository.getOne(id).getNumTel());
+                    c.setLogin(citoyenRepository.getOne(id).getLogin());
+                    c.setMdp(citoyenRepository.getOne(id).getMdp());
+                    return citoyenRepository.save(c);
+                }).orElseThrow(()->new RuntimeException("Citoyen non trouvé!!"));
     }
 
     @Override
     public String DeleteCitoyen(Long id) {
-        return "";
+        citoyenRepository.deleteById(id);
+        return "Citoyen supprimé avec succées";
     }
 
     @Override
     public Citoyen getCitoyenById(Long id) {
-        return null;
+        return citoyenRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Citoyen non trouvé!!"));
     }
 }
