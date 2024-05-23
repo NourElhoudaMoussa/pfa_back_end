@@ -36,6 +36,7 @@ public class CitoyenServiceImp implements CitoyenService {
                     c.setNumTel(citoyen.getNumTel());
                     c.setLogin(citoyen.getLogin());
                     c.setMdp(citoyen.getMdp());
+                    c.setOccupation(citoyen.getOccupation());
                     return citoyenRepository.save(c);
                 }).orElseThrow(()->new RuntimeException("Citoyen non trouvé!!"));
     }
