@@ -31,7 +31,7 @@ public class MessageServiceImp implements MessageService {
                     msg.setIntervention(message.getIntervention());
 
                     return messageRepository.save(msg);
-                }).orElseThrow(()->new RuntimeException("actualité non trouvé !!"));
+                }).orElseThrow(()->new RuntimeException("message non trouvé !!"));
     }
 
     @Override
