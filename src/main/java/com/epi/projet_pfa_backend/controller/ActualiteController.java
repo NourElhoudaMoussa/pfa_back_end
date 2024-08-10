@@ -12,6 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/Actualite")
 @AllArgsConstructor
+@CrossOrigin("*")
 public class ActualiteController {
     private final ActualiteService actualiteService;
 
